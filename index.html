@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>File upload in Express JS</title>
+  </head>
+  <body>
+    <div class="filedata">
+      <form
+        action="http://localhost:3000"
+        method="post"
+        enctype="multipart/form-data"
+      >
+        <div class="form-files">
+          <input type="file" name="avatar" />
+          <input type="submit" value="Submit" />
+        </div>
+      </form>
+    </div>
+  </body>
+</html>
