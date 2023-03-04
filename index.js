@@ -1,3 +1,4 @@
+const { MongoClient, ServerApiVersion } = require('mongodb');
 const express = require('express');
 const multer = require('multer');
 const path = require('path');
@@ -64,6 +65,27 @@ app.use((err, req, res, next) => {
         res.send('Success');
     }
 });
+
+// DB info
+
+const uri = 'mongodb+srv://shamsulhuda:92xxEt5giBzpxpgr@cluster0.abrghjl.mongodb.net/?retryWrites=true&w=majority';
+const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 });
+
+async function run() {
+    try {
+      const collection = client.db('test').collection('devices');
+    //   const doc = {
+    //     title: 'Record of a Shriveled Datum',
+    //     content: 'No bytes, no problem. Just insert a document, in MongoDB',
+    //   };
+    //   const result = await collection.insertOne(doc);
+      // create a document to insert
+        console.log('hello');
+    } finally {
+        console.log('Should close here');
+    }
+  }
+  run().catch(console.dir);
 
 app.listen(port, () => {
     console.log(`Listening port:: ${port}`);
